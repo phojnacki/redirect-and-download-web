@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Created by IntelliJ IDEA.
+User: dell
+Date: 06.04.15
+Time: 16:37
+-->
+<!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+    <title>Download window</title>
+    <link href="css/styles.css" rel="stylesheet" type="text/css"/>
+</h:head>
+
+<h:body>
+    <h2>Downloading file...</h2>
+    <h:form id="jsDownloadForm">
+        <h:commandButton id="downloadFile" action="#{downloadBean.download()}" style="display:none"/>
+        <h:commandButton id="closeWindow" onclick="window.close()" value="Close this window"/>
+    </h:form>
+    <script type="text/javascript">
+        window.onload = function() {
+            document.getElementById('jsDownloadForm:downloadFile').click();
+        }
+    </script>
+</h:body>
+
+</html>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+        >
+
+<h:head>
+    <title>JavaScript based redirect and download</title>
+    <link href="css/styles.css" rel="stylesheet" type="text/css"/>
+</h:head>
+
+<h:body>
+    <h2>Click to open new window and download</h2>
+    <h:form id="jsDownloadForm">
+        Last download time: <i>#{downloadBean.lastDownloadTime}</i>
+        <div>
+            <h:commandButton id="openWindowAndDownload" action="#{downloadBean.update()}" onclick="openDownloadWindow()" value="Download file"/>
+        </div>
+    </h:form>
+    <script type="text/javascript">
+        function openDownloadWindow() {
+            window.open("downloadWindow.xhtml");
+        }
+    </script>
+
+</h:body>
+
+
+
+</html>
