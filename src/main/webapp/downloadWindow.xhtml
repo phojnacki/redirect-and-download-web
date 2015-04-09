@@ -18,10 +18,10 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 </h:head>
 
 <h:body>
-    <h2>Downloading file...</h2>
+    <h2>Download window</h2>
     <h:form id="jsDownloadForm">
-        <h:commandButton id="downloadFile" action="#{downloadBean.download()}" style="display:none"/>
-        <h:commandButton id="closeWindow" onclick="window.close()" value="Close this window"/>
+        <h:commandButton id="downloadFile" action="#{openWindowDownloadBean.download()}" style="display:none"/>
+        <h:commandButton id="closeWindow" onclick="window.close()" value="Close window"/>
     </h:form>
     <script type="text/javascript">
         window.onload = function() {

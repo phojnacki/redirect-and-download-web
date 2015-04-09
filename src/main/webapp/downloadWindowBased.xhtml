@@ -5,26 +5,23 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
         >
 
 <h:head>
     <title>JavaScript based redirect and download</title>
     <link href="css/styles.css" rel="stylesheet" type="text/css"/>
 </h:head>
-
+<f:metadata>
+    <f:viewParam name="lastDownloadTime" value="#{openWindowDownloadBean.lastDownloadTime}" />
+</f:metadata>
 <h:body>
     <h2>Click to open new window and download</h2>
+    Last download time: <i>#{openWindowDownloadBean.lastDownloadTime}</i>
     <h:form id="jsDownloadForm">
-        Last download time: <i>#{downloadBean.lastDownloadTime}</i>
-        <div>
-            <h:commandButton id="openWindowAndDownload" action="#{downloadBean.update()}" onclick="openDownloadWindow()" value="Download file"/>
-        </div>
+        <h:commandButton id="openWindowAndDownload" action="#{openWindowDownloadBean.update()}" onclick="window.open('downloadWindow.xhtml');" value="Download file"/>
+        <h:commandButton id="back" action="index.html?faces-redirect=true" value="Back"/>
     </h:form>
-    <script type="text/javascript">
-        function openDownloadWindow() {
-            window.open("downloadWindow.xhtml");
-        }
-    </script>
 
 </h:body>
 
