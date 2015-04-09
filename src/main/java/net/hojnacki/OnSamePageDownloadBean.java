@@ -23,6 +23,10 @@ public class OnSamePageDownloadBean {
         return "samePageBased?faces-redirect=true&includeViewParams=true";
     }
 
+    public void download() throws IOException {
+        downloadBean.download();
+    }
+
     public boolean isReadyForDownload() {
         return readyForDownload;
     }
@@ -37,10 +41,6 @@ public class OnSamePageDownloadBean {
 
     public void setReadyForDownload(boolean readyForDownload) {
         this.readyForDownload = readyForDownload;
-    }
-
-    public void download() throws IOException {
-        downloadBean.download();
     }
 
     public void setDownloadBean(DownloadBean downloadBean) {
