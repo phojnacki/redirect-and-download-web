@@ -18,7 +18,7 @@
 <h:body>
     <h2>Click to open new window and download</h2>
     Last download time: <i>#{openWindowDownloadBean.lastDownloadTime}</i>
-    <h:form id="jsDownloadForm">
+    <h:form id="downloadForm">
         <h:commandButton id="openWindowAndDownload" action="#{openWindowDownloadBean.update()}" onclick="window.open('downloadWindow.xhtml');" value="Download file"/>
         <h:commandButton id="back" action="index.html?faces-redirect=true" value="Back"/>
     </h:form>

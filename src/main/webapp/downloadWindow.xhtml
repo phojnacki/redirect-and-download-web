@@ -19,13 +19,13 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 
 <h:body>
     <h2>Download window</h2>
-    <h:form id="jsDownloadForm">
+    <h:form id="downloadForm">
         <h:commandButton id="downloadFile" action="#{openWindowDownloadBean.download()}" style="display:none"/>
         <h:commandButton id="closeWindow" onclick="window.close()" value="Close window"/>
     </h:form>
     <script type="text/javascript">
         window.onload = function() {
-            document.getElementById('jsDownloadForm:downloadFile').click();
+            document.getElementById('downloadForm:downloadFile').click();
         }
     </script>
 </h:body>
