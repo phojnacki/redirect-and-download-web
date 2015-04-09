@@ -8,10 +8,10 @@ import java.io.IOException;
 public class OpenWindowDownloadBean {
 
     @ManagedProperty(value = "#{downloadBean}")
-    public DownloadBean downloadBean;
+    private DownloadBean downloadBean;
 
     @ManagedProperty(value = "#{clockBean}")
-    public ClockBean clockBean;
+    private ClockBean clockBean;
 
     private String lastDownloadTime = "none";
 
@@ -29,6 +29,14 @@ public class OpenWindowDownloadBean {
 
     public String update() {
         lastDownloadTime = clockBean.getCurrentTime();
-        return "downloadWindowBased?faces-redirect=true&includeViewParams=true";
+        return "openWindowBased?faces-redirect=true&includeViewParams=true";
+    }
+
+    public void setDownloadBean(DownloadBean downloadBean) {
+        this.downloadBean = downloadBean;
+    }
+
+    public void setClockBean(ClockBean clockBean) {
+        this.clockBean = clockBean;
     }
 }
