@@ -22,10 +22,10 @@
     <h2>Click to redirect and download</h2>
     Last download time: <i>#{onSamePageDownloadBean.lastDownloadTime}</i>
     <h:form id="downloadForm">
-            <h:commandButton id="downloadFile" action="#{onSamePageDownloadBean.download()}" style="display:none"/>
-            <h:commandButton id="redirectAndDownload" action="#{onSamePageDownloadBean.redirectWithDownload()}" value="Download file"/>
-            <h:commandButton id="back" action="index.html?faces-redirect=true" value="Back"/>
-        </h:form>
+        <h:commandButton id="downloadFile" action="#{onSamePageDownloadBean.download()}" style="display:none"/>
+        <h:commandButton id="redirectAndDownload" action="#{onSamePageDownloadBean.redirectWithDownload()}" value="Download file"/>
+        <h:commandButton id="back" action="index.html?faces-redirect=true" value="Back"/>
+    </h:form>
     <c:if test="#{onSamePageDownloadBean.readyForDownload}">
         <script type="text/javascript">
             window.onload = function() {
